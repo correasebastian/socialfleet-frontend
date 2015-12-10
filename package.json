@@ -1,0 +1,14 @@
+{
+  "name": "socialfleet-frontend",
+  "version": "1.0.0",
+  "description": "froent end angularjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sebastian correa",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.0"
+  }
+}
