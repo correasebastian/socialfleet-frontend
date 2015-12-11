@@ -15,14 +15,25 @@
         <button ng-show="Login.isAuthenticated()" class="btn btn-link navbar-btn pull-right" ng-click="Login.logout()">Logout</button>
     </nav>
     <div class="container">
-        <div class="well">
-            <div class="form-group">
-                <textarea rows=4 class="form-control" ng-model="Login.message" placeholder="tweet message"></textarea>
+        <button ng-hide="Login.isAuthenticated()" class="btn btn-primary" ng-click="Login.login()">Login</button>
+        <div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2">
+            <div ng-controller="SchedulerController as Scheduler" class="well clearfix">
+                <div class="form-group">
+                    <textarea rows=4 class="form-control" ng-model="Scheduler.message" placeholder="tweet message"></textarea>
+                </div>
+                <p class="input-group">
+                    <input class="form-control" uib-datepicker-popup ng-model="Scheduler.date" is-open="Scheduler.opened" min-date="Scheduler.minDate">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="Scheduler.open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+                </p>
+                <input uib-timepicker ng-model="Scheduler.time"></input>
+                <button class="btn btn-primary pull-right" ng-disabled="!Scheduler.date || Scheduler.message.length<5" ng-click="Scheduler.tweet()">Tweet</button>
+
+                {{Scheduler | json}}
             </div>
-            <button ng-hide="Login.isAuthenticated()" class="btn btn-primary" ng-click="Login.login()">Login</button>
-            <button class="btn btn-default" ng-click="Login.tweet()">Tweet</button>
+            <div ng-include="'posts/myposts.html'"></div>
         </div>
-        {{Login | json}}
     </div>
     <!-- inject:js -->
     <!-- endinject -->

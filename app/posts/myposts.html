@@ -1,0 +1,13 @@
+<div ng-controller="MyPostsController as MyPosts" class="well">
+    <div class="row" ng-repeat="post in MyPosts.posts">
+    <!-- {{post}} -->
+        <a ui-sref="post({id:post.id})">
+            <div class="col-xs-8">
+                {{post.message | limitTo : 75 }} ...
+            </div>
+            <div class="text-muted col-xs-4 pull-right">
+                {{post.datetime | date:'medium'}}
+            </div>
+        </a>
+    </div>
+</div>
