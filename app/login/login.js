@@ -11,10 +11,11 @@
     function LoginController($auth, $http) {
         var vm = this;
         vm.title = 'LoginController';
+        vm.message = '';
         vm.login = login;
         vm.tweet = tweet;
         vm.isAuthenticated = $auth.isAuthenticated;
-        vm.logout=logout;
+        vm.logout = logout;
         activate();
 
         ////////////////
@@ -26,13 +27,17 @@
         }
 
         function tweet(argument) {
-            $http.post('/api/post/tweet', '')
+
+            var data = {
+                message: vm.message
+            }
+            $http.post('/api/post/tweet', data)
                 .then(function() {
                     console.log('post');
                 });
         }
 
-        function logout () {
+        function logout() {
             alert('logginf out');
             $auth.logout();
         }

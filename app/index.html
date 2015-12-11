@@ -15,8 +15,14 @@
         <button ng-show="Login.isAuthenticated()" class="btn btn-link navbar-btn pull-right" ng-click="Login.logout()">Logout</button>
     </nav>
     <div class="container">
-        <button ng-hide="Login.isAuthenticated()" class="btn btn-primary" ng-click="Login.login()">Login</button>
-        <button class="btn btn-default" ng-click="Login.tweet()">Tweet</button>
+        <div class="well">
+            <div class="form-group">
+                <textarea rows=4 class="form-control" ng-model="Login.message" placeholder="tweet message"></textarea>
+            </div>
+            <button ng-hide="Login.isAuthenticated()" class="btn btn-primary" ng-click="Login.login()">Login</button>
+            <button class="btn btn-default" ng-click="Login.tweet()">Tweet</button>
+        </div>
+        {{Login | json}}
     </div>
     <!-- inject:js -->
     <!-- endinject -->
