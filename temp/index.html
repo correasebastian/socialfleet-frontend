@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>My index</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <!-- endinject -->
+    <!-- vendorInject:js -->
+    <script src="vendor/angular-ui-router.js"></script>
+    <script src="vendor/angular.js"></script>
+    <script src="vendor/satellizer.js"></script>
+    <script src="vendor/ui-bootstrap-tpls.js"></script>
+    <!-- endinject -->
+</head>
+
+<body ng-controller="LoginController as Login">
+    <nav class="navbar navbar-default">
+        <!-- ng-show="Login.isAuthenticated()" -->
+        <button ng-show="Login.isAuthenticated()" class="btn btn-link navbar-btn pull-right" ng-click="Login.logout()">Logout</button>
+    </nav>
+    <div class="container">
+        <button ng-hide="Login.isAuthenticated()" class="btn btn-primary" ng-click="Login.login()">Login</button>
+        <button class="btn btn-default" ng-click="Login.tweet()">Tweet</button>
+    </div>
+    <!-- inject:js -->
+    <script src="app.js"></script>
+    <script src="login/login.config.js"></script>
+    <script src="login/login.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

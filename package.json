@@ -9,6 +9,14 @@
   "author": "sebastian correa",
   "license": "ISC",
   "devDependencies": {
-    "bower": "^1.7.0"
+    "bower": "^1.7.0",
+    "event-stream": "^3.1.7",
+    "gulp": "^3.8.10",
+    "gulp-inject": "^1.0.2",
+    "main-bower-files": "^2.4.1",
+    "gulp-webserver": "^0.8.8"
+  },
+  "dependencies": {
+    "del": "^2.2.0"
   }
 }
